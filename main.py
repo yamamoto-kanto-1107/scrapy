@@ -13,6 +13,7 @@ service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service)
 
 def start():
+  print('call')
   url = 'https://gvtech.co.jp/'
   driver.get(url)
   time.sleep(1)
