@@ -9,8 +9,11 @@ from selenium.common.exceptions import TimeoutException
 
 import time
 
+options = webdriver.ChromeOptions()
+options.add_argument("--user-data-dir=/tmp/chrome-user-data")
+options.add_argument("--headless=new")
 service = Service(ChromeDriverManager().install())
-driver = webdriver.Chrome(service=service)
+driver = webdriver.Chrome(service=service,options=options)
 
 def start():
   print('call')
