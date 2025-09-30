@@ -20,4 +20,8 @@ subprocess.run(["pytest", "--alluredir", results_dir])
 subprocess.run(["allure", "generate", results_dir, "--clean", "-o", report_dir])
 
 # ブラウザで表示
-subprocess.run(["allure", "open", report_dir])
+subprocess.run([
+    "allure", "serve", results_dir,
+    "--host", "0.0.0.0",
+    "--port", "8080"
+])
