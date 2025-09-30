@@ -19,9 +19,11 @@ subprocess.run(["pytest", "--alluredir", results_dir])
 # Allure レポート生成
 subprocess.run(["allure", "generate", results_dir, "--clean", "-o", report_dir])
 
-# ブラウザで表示
-subprocess.run([
-    "allure", "serve", results_dir,
-    "--host", "0.0.0.0",
-    "--port", "8080"
-])
+# # ブラウザで表示
+# subprocess.run([
+#     "allure", "serve", results_dir,
+#     "--host", "0.0.0.0",
+#     "--port", "8080"
+# ])
+
+subprocess.run(["scp","-r",report_dir,"kantoyamamoto@192.168.0.105:/Users/kantoyamamoto/Desktop"])
